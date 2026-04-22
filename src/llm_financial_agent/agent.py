@@ -315,7 +315,7 @@ def _do_eval(code: object, namespace: dict) -> float:
         Evaluation result as float.
     """
     # Using exec of a compiled "eval" mode expression in a restricted namespace
-    result_holder: dict = {}
+    result_holder: dict = {}  # noqa: F841
     exec_code = compile(
         f"__result__ = ({code.co_code!r})", "<calc>", "exec"
     ) if False else code
